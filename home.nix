@@ -10,6 +10,8 @@
     ./modules/apps/fastfetch.nix
     ./modules/apps/firefox.nix
     ./modules/apps/git.nix
+
+    ./modules/games/minecraft.nix
   ];
   
   home.packages = with pkgs; [ unzip ];
