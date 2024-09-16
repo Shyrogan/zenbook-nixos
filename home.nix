@@ -14,7 +14,7 @@
     ./modules/games/minecraft.nix
   ];
   
-  home.packages = with pkgs; [ unzip ];
+  home.packages = with pkgs; [ unzip gnutar ];
 
   home.stateVersion = "24.11";
 }

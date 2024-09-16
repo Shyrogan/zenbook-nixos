@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ modrinth-app temurin-jre-bin-17 ];
+  home.packages = with pkgs; [ modrinth-app-unwrapped temurin-jre-bin-17 ];
 }
