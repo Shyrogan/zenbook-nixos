@@ -16,8 +16,8 @@
 
       clipboard = {
         providers = {
-	  wl-copy.enable = true;
-	};
+          wl-copy.enable = true;
+        };
       };
     };
 
@@ -25,13 +25,13 @@
       auto-save.enable = true;
       barbar = {
         enable = true;
-	keymaps = {
-	  close.key = "<leader>bc";
-	  closeBuffersLeft.key = "<leader>blc";
-	  closeBuffersRight.key = "<leader>brc";
-	  next.key = "<leader>bn";
-	  previous.key = "<leader>bb";
-	};
+        keymaps = {
+          close.key = "<leader>bc";
+          closeBuffersLeft.key = "<leader>blc";
+          closeBuffersRight.key = "<leader>brc";
+          next.key = "<leader>bn";
+          previous.key = "<leader>bb";
+        };
       };
       barbecue = {
         enable = true;
@@ -52,24 +52,53 @@
         enable = true;
 
         servers = {
-	  nil-ls.enable = true;
-	  typst-lsp.enable = true;
+          nil-ls.enable = true;
+          typst-lsp.enable = true;
+          svelte.enable = true;
+          tailwindcss.enable = true;
+          ts-ls.enable = true;
+        };
+
+        keymaps = {
+          lspBuf = {
+            K = "hover";
+            gd = "definition";
+            gr = "references";
+            gt = "type_definition";
+            gi = "implementation";
+          };
         };
       };
       lualine = {
         enable = true;
-	settings.options = {
-	  section_separators.left = "";
-	  section_separators.right = "";
-	};
+        settings.options = {
+          section_separators.left = "";
+          section_separators.right = "";
+        };
       };
-
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = {
+            action = "find_files";
+            options = {
+              desc = "Find in project files";
+            };
+          };
+          "<leader>fg" = {
+            action = "live_grep";
+            options = {
+              desc = "Search in files";
+            };
+          };
+        };
+      };
       typst-vim = {
         enable = true;
-	keymaps = {
-	  watch = "<leader>Nw";
-	};
-	settings.pdf_viewer = "zathura";
+        keymaps = {
+          watch = "<leader>Nw";
+        };
+        settings.pdf_viewer = "zathura";
       };
 
       which-key = {
