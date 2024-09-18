@@ -20,5 +20,10 @@
   programs.starship = {
     enable = true;
   };
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.bat.enable = true;
 }
   

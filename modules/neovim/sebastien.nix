@@ -92,10 +92,12 @@
           };
         };
         settings = {
-          file_ignore_patterns = [
-            "^.git/"
-            "node_modules"
-          ];
+          defaults = {
+            file_ignore_patterns = [
+              "^.git/"
+              "node_modules"
+            ];
+          };
         };
       };
       typescript-tools = {

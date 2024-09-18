@@ -8,8 +8,9 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    walker.url = "github:abenz1267/walker";
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nixvim, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, ... }@inputs: {
     nixosConfigurations.sebastienix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -24,6 +25,7 @@
 	  home-manager.extraSpecialArgs = { inherit inputs; };
 	  home-manager.sharedModules = [
 	    nixvim.homeManagerModules.nixvim
+      walker.homeManagerModules.default
 	  ];
 	}
 	stylix.nixosModules.stylix
