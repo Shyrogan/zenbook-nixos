@@ -56,7 +56,6 @@
           typst-lsp.enable = true;
           svelte.enable = true;
           tailwindcss.enable = true;
-          ts-ls.enable = true;
         };
 
         keymaps = {
@@ -92,6 +91,15 @@
             };
           };
         };
+        settings = {
+          file_ignore_patterns = [
+            "^.git/"
+            "node_modules"
+          ];
+        };
+      };
+      typescript-tools = {
+        enable = true;
       };
       typst-vim = {
         enable = true;
