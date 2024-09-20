@@ -11,6 +11,7 @@
     shellAliases = {
       ll = "ls -l";
       nix-shell = "nix-shell --run nu";
+      ns = "nix-shell --run nu";
     };
   };
   programs.carapace = {
