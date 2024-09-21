@@ -4,13 +4,14 @@
     ./waybar.nix
     ./walker.nix
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mod" = "SUPER";
-      "monitor" = "eDP-1,preferred,auto,1.8";
+      "monitor" = "eDP-1,preferred,auto,2";
 
       bind = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -70,8 +71,6 @@
         touchpad = {
           scroll_factor = 0.3;
         };
-        # TODO: improve mouse speed
-        # force_no_accel = 1;
       };
 
       gestures = {
@@ -89,7 +88,12 @@
       };
     };
     extraConfig = ''
+    exec-once = hyprlock --immediate
     exec-once = waybar
+
+    exec-once = [workspace 8 silent] slack
+    exec-once = [workspace 9 silent] vesktop
+    exec-once = [workspace 10 silent] spotify
     '';
   };
 

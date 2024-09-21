@@ -1,5 +1,8 @@
+{ config, ... }:
 {
-  programs.hyprlock = {
+  programs.hyprlock = let
+    colors = config.lib.stylix.colors.withHashtag;
+  in {
     enable = true;
     settings = {
       general = {
@@ -9,15 +12,16 @@
       };
 
       background = {
-        path = ../../../assets/wallpaper.png;
-        blur_passes = 0;
+        path = "${config.stylix.image}";
+        blur_passes = 2;
+        blur_size = 7;
       };
      label = [
       {
         # Day-Month-Date
         monitor = "";
         text = ''cmd[update:1000] echo -e "$(date +"%A, %B %d")"'';
-        color = "rgba(216, 222, 233, .7)";
+        color = "${colors.base07}";
         font_size = 28;
         font_family = "SFProDisplay Nerd Font Bold";
         position = "0, 490";
@@ -28,7 +32,7 @@
       {
         monitor = "";
         text = ''cmd[update:1000] echo "<span>$(date +"%I:%M")</span>"'';
-        color = "rgba(216, 222, 233, .7)";
+        color = "${colors.base07}";
         font_size = 160;
         font_family = "steelfish outline regular";
         position = "0, 370";
@@ -38,8 +42,8 @@
       # USER
       {
         monitor = "";
-        text = "    $USER";
-        color = "rgba(216, 222, 233, 0.80)";
+        text = "Sébastien VIAL (sebastien@shyrogan.fr)";
+        color = "${colors.base0C}";
         outline_thickness = 2;
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
@@ -51,42 +55,25 @@
         valign = "center";
       }
     ];
-
-    # Foreground
-    # image = [{
-    #   monitor = "";
-    #   path = "~/.config/hypr/foreground.png";
-    #   size = 700;
-    #   border_size = 0;
-    #   rounding = 0;
-    #   rotate = 0;
-    #   reload_time = 0;
-    #   reload_cmd = "";
-    #   position = "0, -66";
-    #   halign = "center";
-    #   valign = "center";
-    # }];
-
-    # INPUT FIELD
-    input-field = [{
-      monitor = "";
-      size = "300, 60";
-      outline_thickness = 2;
-      dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
-      dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
-      dots_center = true;
-      outer_color = "rgba(255, 255, 255, 0)";
-      inner_color = "rgba(255, 255, 255, 0.1)";
-      font_color = "rgb(200, 200, 200)";
-      fade_on_empty = false;
-      font_family = "SFProDisplay Nerd Font Bold";
-      placeholder_text =
-        ''<i><span foreground="##ffffff99">🔒 Enter Pass</span></i>'';
-      hide_input = false;
-      position = "0, -250";
-      halign = "center";
-      valign = "center";
-    }];
+      input-field = [{
+        monitor = "";
+        size = "300, 60";
+        outline_thickness = 2;
+        dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
+        dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
+        dots_center = true;
+        outer_color = "rgba(255, 255, 255, 0)";
+        inner_color = "rgba(255, 255, 255, 0.1)";
+        font_color = "rgb(200, 200, 200)";
+        fade_on_empty = false;
+        font_family = "SFProDisplay Nerd Font Bold";
+        placeholder_text =
+          ''<i><span foreground="##ffffff99">  Mot de passe</span></i>'';
+        hide_input = false;
+        position = "0, -250";
+        halign = "center";
+        valign = "center";
+      }];
     };
   };
 }

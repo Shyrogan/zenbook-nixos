@@ -25,7 +25,7 @@
             urgent = " ";
             focused = " ";
             default = " ";
-                };
+          };
         };
 
         "hyprland/window" = {
