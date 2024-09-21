@@ -94,6 +94,8 @@
     exec-once = [workspace 8 silent] slack
     exec-once = [workspace 9 silent] vesktop
     exec-once = [workspace 10 silent] spotify
+    
+    windowrulev2 = workspace 9,initialClass:^(vesktop)$
     '';
   };
 

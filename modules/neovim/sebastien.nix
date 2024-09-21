@@ -21,6 +21,10 @@
       };
     };
 
+    imports = [
+      ./cmp.nix
+    ];
+
     plugins = {
       auto-save.enable = true;
       barbar = {
@@ -35,14 +39,6 @@
       };
       barbecue = {
         enable = true;
-      };
-      cmp = {
-        autoEnableSources = false;
-        settings.sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "buffer"; }
-        ];
       };
       dressing = {
         enable = true;
