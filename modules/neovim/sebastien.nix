@@ -1,4 +1,5 @@
-{
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ nodejs_22 ];
   programs.nixvim = {
     enable = true;
 
@@ -22,7 +23,9 @@
     };
 
     imports = [
-      ./cmp.nix
+      ./completions/cmp.nix
+      ./completions/copilot.nix
+      ./completions/lspkind.nix
     ];
 
     plugins = {
