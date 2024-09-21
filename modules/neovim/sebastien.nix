@@ -26,6 +26,8 @@
       ./completions/cmp.nix
       ./completions/copilot.nix
       ./completions/lspkind.nix
+
+      ./lang/treesitter.nix
     ];
 
     plugins = {
