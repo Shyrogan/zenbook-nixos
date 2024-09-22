@@ -23,6 +23,8 @@
     };
 
     imports = [
+      ./plugin-manager.nix
+
       ./completions/cmp.nix
       ./completions/copilot.nix
       ./completions/lspkind.nix
