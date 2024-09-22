@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./modules/desktop/hyprland/sebastien.nix
     ./modules/networking/sebastien.nix
-    ./modules/nushell/sebastien.nix
+    ./modules/apps/nushell/sebastien.nix
     ./modules/apps/kitty.nix
     ./modules/apps/discord.nix
     ./modules/apps/zathura.nix
