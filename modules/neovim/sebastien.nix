@@ -28,6 +28,10 @@
       ./completions/lspkind.nix
 
       ./lang/treesitter.nix
+
+      ./lsp/lsp.nix
+      ./lsp/lspsaga.nix
+      ./lsp/conform.nix
     ];
 
     plugins = {
@@ -49,26 +53,6 @@
         enable = true;
       };
       indent-o-matic.enable= true;
-      lsp = {
-        enable = true;
-
-        servers = {
-          nil-ls.enable = true;
-          typst-lsp.enable = true;
-          svelte.enable = true;
-          tailwindcss.enable = true;
-        };
-
-        keymaps = {
-          lspBuf = {
-            K = "hover";
-            gd = "definition";
-            gr = "references";
-            gt = "type_definition";
-            gi = "implementation";
-          };
-        };
-      };
       lualine = {
         enable = true;
         settings.options = {
