@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./modules/desktop/hyprland/sebastien.nix
     ./modules/networking/sebastien.nix
-    ./modules/neovim/sebastien.nix
     ./modules/nushell/sebastien.nix
     ./modules/apps/kitty.nix
     ./modules/apps/discord.nix
@@ -16,6 +15,8 @@
   ];
   
   home.packages = with pkgs; [
+    inputs.Neve.packages.${pkgs.system}.default
+
     unzip
     gnutar
 

@@ -1,6 +1,20 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [ nodejs_22 ];
   programs.nixvim = {
+    imports = [
+      ./plugin-manager.nix
+
+      ./completions/cmp.nix
+      ./completions/copilot.nix
+      ./completions/lspkind.nix
+
+      ./lang/treesitter.nix
+
+      ./lsp/lsp.nix
+      ./lsp/lspsaga.nix
+      ./lsp/conform.nix
+    ];
+
     enable = true;
 
     globals = {
@@ -21,21 +35,6 @@
         };
       };
     };
-
-    imports = [
-      ./plugin-manager.nix
-
-      ./completions/cmp.nix
-      ./completions/copilot.nix
-      ./completions/lspkind.nix
-
-      ./lang/treesitter.nix
-
-      ./lsp/lsp.nix
-      ./lsp/lspsaga.nix
-      ./lsp/conform.nix
-    ];
-
     plugins = {
       auto-save.enable = true;
       barbar = {
