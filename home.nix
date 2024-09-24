@@ -10,8 +10,10 @@
     ./modules/apps/firefox.nix
     ./modules/apps/git.nix
     ./modules/apps/spotify.nix
+
     ./modules/apps/vscode.nix
     ./modules/apps/intellij.nix
+    ./modules/apps/gitkraken.nix
 
     ./modules/games/minecraft.nix
   ];
