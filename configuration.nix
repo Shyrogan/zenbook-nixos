@@ -6,6 +6,7 @@
     ./modules/networking/os.nix
     ./modules/audio/os.nix
     ./modules/desktop/hyprland/os.nix
+    ./modules/steam/os.nix
   ];
 
   time.timeZone = "Europe/Paris";
