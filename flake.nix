@@ -11,8 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     walker.url = "github:abenz1267/walker";
+    agenix.url = "github:ryantm/agenix";
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, agenix, ... }@inputs: {
     nixosConfigurations.sebastienix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -30,8 +31,11 @@
           ];
         }
         stylix.nixosModules.stylix
-          ./modules/stylix
-        ];
+        agenix.nixosModules.default
+        
+        ./modules/stylix
+        ./agenix
+      ];
     };
   };
 }

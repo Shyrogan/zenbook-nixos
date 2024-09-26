@@ -1,10 +1,14 @@
 { pkgs, ...}: {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true ;
 
   networking = {
-    networkmanager.enable = true;
+    hostName = "sebastien-laptop";
+    # networkmanager.enable = true;
+    wireless = {
+      enable = true;
+      userControlled.enable = true;
+    };
   };
-  environment.systemPackages = with pkgs; [ overskride networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [ overskride wpa_supplicant_gui ];
 }

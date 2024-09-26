@@ -19,5 +19,11 @@
       initial_session = session;
     };
   };
+
+
+  # Nautilus
+  environment.systemPackages = with pkgs; [ nautilus  ];
+  services.gvfs.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
