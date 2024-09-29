@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
   stylix = {
     enable = true;
     image = ../../assets/wallpaper.png;

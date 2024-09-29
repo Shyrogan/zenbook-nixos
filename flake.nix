@@ -34,8 +34,6 @@
               walker.homeManagerModules.default
             ];
           }
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
           
           ./modules/stylix
           ./modules/agenix
