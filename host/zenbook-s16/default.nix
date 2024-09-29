@@ -1,22 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  networking.hostName = "mizu";
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/os
-    ./modules/networking/os.nix
+    ./modules/networking
     ./modules/audio/os.nix
     ./modules/desktop/hyprland/os.nix
-    ./modules/steam/os.nix
   ];
 
-  time.timeZone = "Europe/Paris";
-  i18n.defaultLocale = "en_US.UTF-8";
-  
   users.users = {
     sebastien = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "audio" ]; # Enable ‘sudo’ for the user
+      extraGroups = [ "wheel" "audio" ];
       packages = with pkgs; [
         nushell
       ];

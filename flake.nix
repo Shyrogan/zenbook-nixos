@@ -13,29 +13,34 @@
     walker.url = "github:abenz1267/walker";
     agenix.url = "github:ryantm/agenix";
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, agenix, ... }@inputs: {
-    nixosConfigurations.sebastienix = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-      	./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.sebastien = import ./home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.sharedModules = [
-            nixvim.homeManagerModules.nixvim
-            walker.homeManagerModules.default
-          ];
-        }
-        stylix.nixosModules.stylix
-        agenix.nixosModules.default
-        
-        ./modules/stylix
-        ./agenix
-      ];
+  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, agenix, ... }@inputs: let
+   inherit (self) outputs; 
+  in {
+    # Configuration for my Zenbook S16 that uses HX370 CPU
+    nixosConfigurations = {
+      zenbook-s16 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./host/zenbook-s16
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sebastien = import ./home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.sharedModules = [
+              nixvim.homeManagerModules.nixvim
+              walker.homeManagerModules.default
+            ];
+          }
+          stylix.nixosModules.stylix
+          agenix.nixosModules.default
+          
+          ./modules/stylix
+          ./agenix
+        ];
+      };
     };
   };
 }

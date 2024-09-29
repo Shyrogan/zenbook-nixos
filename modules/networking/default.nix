@@ -19,7 +19,7 @@
           pairwise=CCMP
           group=CCMP TKIP
           eap=PEAP
-          ca_cert="${../networking/eduroam.pem}"
+          ca_cert="${../../assets/networking/eduroam.pem}"
           altsubject_match="DNS:wifi.umontpellier.fr"
           phase2="auth=MSCHAPV2"
           '';
