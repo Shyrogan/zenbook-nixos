@@ -6,18 +6,18 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   security.pam.services.hyprlock = {};
-  # services.greetd = {
-  # enable = true;
-  #  settings = let
-  #    session = {
-  #     command = "${pkgs.hyprland}/bin/hyprland";
-  #      user = "sebastien";
-  #    };
-  #  in {
-  #    default_session = session;
-  #    initial_session = session;
-  #  };
-  #};
+  services.greetd = {
+  enable = true;
+  settings = let
+     session = {
+      command = "${pkgs.hyprland}/bin/hyprland";
+      user = "sebastien";
+     };
+   in {
+     default_session = session;
+     initial_session = session;
+   };
+  };
 
 
   # Nautilus
