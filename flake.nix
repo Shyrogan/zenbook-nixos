@@ -38,7 +38,7 @@
           agenix.nixosModules.default
           
           ./modules/stylix
-          ./agenix
+          ./modules/agenix
         ];
       };
     };
