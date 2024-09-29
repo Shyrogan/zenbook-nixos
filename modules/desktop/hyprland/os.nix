@@ -1,28 +1,27 @@
 { pkgs, inputs, ... }: {
   programs.hyprland = {
     enable = true;
-    # set the flake package
+    xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   security.pam.services.hyprlock = {};
-  services.greetd = {
-    enable = true;
-    settings = let
-      session = {
-        command = "${pkgs.hyprland}/bin/hyprland";
-        user = "sebastien";
-      };
-    in {
-      default_session = session;
-      initial_session = session;
-    };
-  };
+  # services.greetd = {
+  # enable = true;
+  #  settings = let
+  #    session = {
+  #     command = "${pkgs.hyprland}/bin/hyprland";
+  #      user = "sebastien";
+  #    };
+  #  in {
+  #    default_session = session;
+  #    initial_session = session;
+  #  };
+  #};
 
 
   # Nautilus
-  environment.systemPackages = with pkgs; [ nautilus  ];
+  environment.systemPackages = with pkgs; [ nautilus];
   services.gvfs.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
