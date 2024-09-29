@@ -96,10 +96,6 @@
     exec-once = [workspace 10 silent] spotify
     
     windowrulev2 = workspace 9,initialClass:^(vesktop)$
-
-    monitor = eDP-1,preferred,auto,2
-    monitor = HDMI-A-1,preferred,auto,1.33333333333
-    monitor = DP-1,preferred,auto,1,transform,1
     '';
   };
 
