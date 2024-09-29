@@ -60,10 +60,10 @@
         "SHIFT $mod, j, movewindow, d"
         "SHIFT $mod, k, movewindow, u"
         "SHIFT $mod, l, movewindow, r"
-        "CTRL $mod, h, resizeactive, -10 0"
-        "CTRL $mod, j, resizeactive, 0 -10"
-        "CTRL $mod, k, resizeactive, 0 10"
-        "CTRL $mod, l, resizeactive, 10 0"
+        "CTRL $mod, h, resizeactive, -5% 0%"
+        "CTRL $mod, j, resizeactive, 0% -5%"
+        "CTRL $mod, k, resizeactive, 0% 5%"
+        "CTRL $mod, l, resizeactive, 5% 0%"
       ];
 
       bindm = [
