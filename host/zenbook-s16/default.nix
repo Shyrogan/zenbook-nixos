@@ -15,7 +15,7 @@
   users.users = {
     sebastien = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "audio" ];
+      extraGroups = [ "wheel" "audio" "docker" ];
       packages = with pkgs; [
         nushell
       ];
