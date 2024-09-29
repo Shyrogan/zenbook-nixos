@@ -5,13 +5,13 @@
     ./walker.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./kanshi.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mod" = "SUPER";
-      "monitor" = "eDP-1,preferred,auto,2";
 
       bind = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -40,8 +40,6 @@
         "$mod, underscore, workspace, 8"
         "$mod, ccedilla, workspace, 9"
         "$mod, agrave, workspace, 10"
-
-        # Move to workspace
         "SHIFT $mod, ampersand, movetoworkspace, 1"
         "SHIFT $mod, eacute, movetoworkspace, 2"
         "SHIFT $mod, quotedbl, movetoworkspace, 3"
@@ -58,7 +56,6 @@
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
-
         "SHIFT $mod, h, movewindow, l"
         "SHIFT $mod, j, movewindow, d"
         "SHIFT $mod, k, movewindow, u"
@@ -96,6 +93,10 @@
     exec-once = [workspace 10 silent] spotify
     
     windowrulev2 = workspace 9,initialClass:^(vesktop)$
+
+    monitor = eDP-1,preferred,auto,2
+    monitor = HDMI-A-1,preferred,auto,1.33333333333
+    monitor = DP-1,preferred,auto,1,transform,1
     '';
   };
 
@@ -107,6 +108,7 @@
   services.dunst = {
     enable = true;
   };
+
 
 
   home.packages = with pkgs; [ hyprpaper brightnessctl ];
