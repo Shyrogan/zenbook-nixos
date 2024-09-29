@@ -28,8 +28,8 @@
         "$mod, Space, exec, walker"
 
         "$mod, d, killactive"
-
         "$mod, f, fullscreen"
+        "$mod, v, togglefloating"
 
         # Workspaces
         "$mod, ampersand, workspace, 1" "$mod, eacute, workspace, 2" "$mod, quotedbl, workspace, 3"
