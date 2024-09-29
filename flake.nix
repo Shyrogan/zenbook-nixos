@@ -18,7 +18,7 @@
   in {
     # Configuration for my Zenbook S16 that uses HX370 CPU
     nixosConfigurations = {
-      zenbook-s16 = nixpkgs.lib.nixosSystem {
+      mizu = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs outputs; };
         modules = [
