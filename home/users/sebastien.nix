@@ -12,6 +12,7 @@
     ../apps/vscode.nix
     ../apps/intellij.nix
     ../apps/gitkraken.nix
+    ../apps/minecraft.nix
   ];
   
   home.packages = with pkgs; [
