@@ -13,19 +13,19 @@
       #}
       {
         name = "Bluetooth: btusb: Add USB HW ID for ASUS Zenbook S 16";
-        patch = ./patches/bluetooth.patch;
+        patch = ../../host/zenbook-s16/patches/bluetooth.patch;
       }
       {
         name = "asus-wmi: Disable OOBE experience on Zenbook S 16";
-        patch = ./patches/keyboard.patch;
+        patch = ../../host/zenbook-s16/patches/keyboard.patch;
       }
       {
         name = "accel/amdxdna: Add a new driver for AMD AI Engine";
-        patch = ./patches/npu.patch;
+        patch = ../../host/zenbook-s16/patches/npu.patch;
       }
       {
         name = "ASoC: amd: acp: add ZSC control register programming sequence";
-        patch = ./patches/zsc_control.patch;
+        patch = ../../host/zenbook-s16/patches/zsc_control.patch;
       }
     ];
   };
