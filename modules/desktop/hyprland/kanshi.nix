@@ -1,7 +1,7 @@
-{ pkgs, ...  }: {
+{
   services.kanshi = {
     enable = true;
-    systemdTarget = "";
+    systemdTarget = "hyprland-session.target";
     settings = [
       {
         profile.name = "docked";
