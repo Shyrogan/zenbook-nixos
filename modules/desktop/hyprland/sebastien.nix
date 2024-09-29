@@ -87,6 +87,7 @@
       };
     };
     extraConfig = ''
+    exec-once = kanshi
     exec-once = hyprlock --immediate
     exec-once = waybar
 
