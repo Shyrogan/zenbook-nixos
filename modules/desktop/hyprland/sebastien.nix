@@ -27,14 +27,12 @@
         "$mod, n, exec, firefox"
         "$mod, Space, exec, walker"
 
-        "$mod, c, killactive"
+        "$mod, d, killactive"
 
         "$mod, f, fullscreen"
 
         # Workspaces
-        "$mod, ampersand, workspace, 1"
-        "$mod, eacute, workspace, 2"
-        "$mod, quotedbl, workspace, 3"
+        "$mod, ampersand, workspace, 1" "$mod, eacute, workspace, 2" "$mod, quotedbl, workspace, 3"
         "$mod, apostrophe, workspace, 4"
         "$mod, parenleft, workspace, 5"
         "$mod, egrave, workspace, 6"
@@ -62,6 +60,15 @@
         "SHIFT $mod, j, movewindow, d"
         "SHIFT $mod, k, movewindow, u"
         "SHIFT $mod, l, movewindow, r"
+        "CTRL $mod, h, resizeactive, l"
+        "CTRL $mod, j, resizeactive, d"
+        "CTRL $mod, k, resizeactive, u"
+        "CTRL $mod, l, resizeactive, r"
+      ];
+
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
 
 
