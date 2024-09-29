@@ -4,8 +4,6 @@
   services.blueman.enable = true;
 
   networking = {
-    hostName = "sebastien-laptop";
-    # networkmanager.enable = true;
     wireless = {
       enable = true;
       userControlled.enable = true;
