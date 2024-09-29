@@ -5,10 +5,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/os
-    ./modules/networking
-    ./modules/audio/os.nix
-    ./modules/desktop/hyprland/os.nix
+    ../../modules/os
+    ../../modules/networking
+    ../../modules/audio
+    ../../modules/desktop/hyprland/os.nix
   ];
 
   users.users = {
