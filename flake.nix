@@ -27,7 +27,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sebastien = import ./home.nix;
+            home-manager.users.sebastien = import ./home/users/sebastien.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.sharedModules = [
               nixvim.homeManagerModules.nixvim
