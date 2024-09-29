@@ -1,0 +1,3 @@
+[submodule "modules/neve"]
+	path = modules/neve
+	url = git@github.com:Shyrogan/Neve.git
