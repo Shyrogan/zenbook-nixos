@@ -8,6 +8,7 @@
     ../../modules/os
     ../../modules/networking
     ../../modules/audio
+    ../../modules/virtualisation
     ../../modules/desktop/hyprland/os.nix
   ];
 
