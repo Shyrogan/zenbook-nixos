@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.waybar = let
     colors = config.lib.stylix.colors.withHashtag;
   in {
@@ -9,8 +9,8 @@
         layer = "top";
         position = "top";
 
-        modules-left = ["hyprland/workspaces" "clock#date"];
-        modules-center = ["hyprland/window"];
+        modules-left = ["hyprland/workspaces" "clock"];
+        modules-center = ["hyprland/window" "custom/color-picker" "custom/screenshot-screen" "custom/screenshot-window" "custom/screenshot-region"];
         modules-right = ["cpu" "memory" "temperature" "wireplumber" "battery"];
 
         "hyprland/workspaces" = {
@@ -33,8 +33,26 @@
         };
 
         "clock" = {
-           format = "  {:%a, %d. %b  %H:%M}";
+           format = "<span color=\"${colors.base0C}\"></span>   {:%d/%m %H:%M}";
            tooltip-format = "{:%e %B %Y}";
+        };
+
+        "custom/color-picker" = {
+           format = "󰴱";
+           on-click = "hyprpicker -a";
+        };
+
+        "custom/screenshot-screen" = {
+          format = "";
+          on-click = "hyprshot -m output";
+        };
+        "custom/screenshot-window" = {
+          format = "";
+          on-click = "hyprshot -m window";
+        };
+        "custom/screenshot-region" = {
+          format = "";
+          on-click = "hyprshot -m region";
         };
 
         battery = {
@@ -47,6 +65,7 @@
           format = "{capacity}% <span color=\"${colors.base0C}\">{icon}</span>";
           format-icons = [" " " " " " " " " "];
           format-charging = ["{capacity}% <span color=\"${colors.base0B}\">󱐌</span>"];
+          format-plugged = ["{capacity}% <span color=\"${colors.base0B}\">󱐌</span>"];
         };
 
         wireplumber = {
@@ -117,9 +136,12 @@
         background: transparent;
       }
 
-      #workspaces {
+      #workspaces, #custom-color-picker, #custom-screenshot-screen, #custom-screenshot-window {
         font-size: 9pt;
-        margin-right: 8px;
+      }
+
+      #custom-screenshot-region {
+        margin-right: 4px;
       }
 
       #workspaces button {
@@ -131,10 +153,15 @@
         border-bottom: 2px solid ${colors.base0C};
       }
 
+      #workspaces, #window, #custom-color-picker, #custom-screenshot-screen, #custom-screenshot-window {
+        margin-right: 8px;
+      }
+
       #battery, #wireplumber, #temperature, #memory {
         margin-left: 8px;
       }
       '';
   };
   stylix.targets.waybar.enable = false;
+  home.packages = with pkgs; [ hyprshot hyprpicker ];
 }
