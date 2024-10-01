@@ -21,7 +21,7 @@
 
 
   # Nautilus
-  environment.systemPackages = with pkgs; [ nautilus];
+  environment.systemPackages = with pkgs; [ nautilus wl-clipboard ];
   services.gvfs.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
