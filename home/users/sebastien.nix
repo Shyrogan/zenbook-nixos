@@ -23,6 +23,7 @@
     gnutar
 
     slack
+    thunderbird
   ];
 
   home.stateVersion = "24.11";
