@@ -24,6 +24,7 @@
 
     slack
     thunderbird
+    vlc
   ];
 
   home.stateVersion = "24.11";
