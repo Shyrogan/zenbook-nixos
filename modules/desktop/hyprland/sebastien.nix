@@ -25,7 +25,7 @@
 
         "$mod, Return, exec, kitty"
         "$mod, n, exec, firefox"
-        "$mod, Space, exec, walker"
+        "$mod, Space, exec, walker --modules applications"
 
         "$mod, d, killactive"
         "$mod, f, fullscreen"
@@ -97,6 +97,7 @@
     exec-once = kanshi
     exec-once = hyprlock --immediate
     exec-once = waybar
+    exec-once=walker --gapplication-service
 
     exec-once = [workspace 8 silent] slack
     exec-once = [workspace 9 silent] vesktop
