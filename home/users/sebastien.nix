@@ -24,7 +24,8 @@
 
     slack
     thunderbird
-    vlc
+    haruna
+    obs-studio
   ];
 
   home.stateVersion = "24.11";
