@@ -104,6 +104,10 @@
     exec-once = [workspace 10 silent] spotify
     
     windowrulev2 = workspace 9,initialClass:^(vesktop)$
+    
+    animation = workspaces, 1, 2, default
+    animation = windows, 1, 2, default, slide
+    animation = fade, 0
     '';
   };
 
