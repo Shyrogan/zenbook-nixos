@@ -15,7 +15,7 @@
   users.users = {
     sebastien = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "audio" "docker" ];
+      extraGroups = [ "wheel" "audio" "docker" "dialout" ];
       packages = with pkgs; [
         nushell
       ];
@@ -29,6 +29,11 @@
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+  environment.systemPackages = with pkgs; [
+    python3
+    python312Packages.pyserial
+  ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }

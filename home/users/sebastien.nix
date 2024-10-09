@@ -29,8 +29,6 @@
 
     arduino-cli
     arduino-ide
-    python3
-    python312Packages.pyserial
   ];
 
   home.stateVersion = "24.11";
