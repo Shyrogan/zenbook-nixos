@@ -9,6 +9,7 @@
     ../../modules/networking
     ../../modules/audio
     ../../modules/virtualisation
+    ../../modules/gaming
     ../../modules/desktop/hyprland/os.nix
   ];
 
