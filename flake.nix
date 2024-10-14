@@ -25,14 +25,17 @@
           ./host/zenbook-s16
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sebastien = import ./home/users/sebastien.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-              walker.homeManagerModules.default
-            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.sebastien = import ./home/users/sebastien.nix;
+              extraSpecialArgs = { inherit inputs; };
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+                walker.homeManagerModules.default
+              ];
+              backupFileExtension = "backup";
+            };
           }
           
           ./modules/stylix
