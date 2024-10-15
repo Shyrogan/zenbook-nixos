@@ -7,12 +7,12 @@
   };
   security.pam.services.hyprlock = {};
   services.greetd = {
-  enable = true;
-  settings = let
-     session = {
-      command = "${pkgs.hyprland}/bin/hyprland";
-      user = "sebastien";
-     };
+    enable = true;
+    settings = let
+      session = {
+        command = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/Hyprland";
+        user = "sebastien";
+       };
    in {
      default_session = session;
      initial_session = session;

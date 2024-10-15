@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, inputs, ... }: 
 {
   imports = [
     ./waybar.nix
@@ -12,6 +12,7 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     settings = {
       "$mod" = "SUPER";
 
@@ -119,8 +120,6 @@
   services.dunst = {
     enable = true;
   };
-
-
 
   home.packages = with pkgs; [ hyprpaper brightnessctl ];
 }

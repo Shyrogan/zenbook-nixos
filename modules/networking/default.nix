@@ -7,12 +7,12 @@
     wireless = {
       enable = true;
       userControlled.enable = true;
-      environmentFile = config.age.secrets.wifis.path;
+      secretsFile = config.age.secrets.wifis.path;
       networks = {
         eduroam = {
           auth = ''
-          identity="@EDUROAM_EMAIL@"
-          password="@EDUROAM_PASSWORD@"
+          identity="sebastien.vial@etu.umontpellier.fr"
+          password=ext:EDUROAM_PASSWORD
           key_mgmt=WPA-EAP
           pairwise=CCMP
           group=CCMP TKIP
@@ -24,7 +24,7 @@
         };
         SFR-a470_5GHz = {
           auth = ''
-          psk="@APS_PASSWORD@"
+          psk=ext:APS_PASSWORD
           '';
         };
       };
