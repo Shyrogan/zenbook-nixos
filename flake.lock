@@ -7,11 +7,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1728838390,
-        "narHash": "sha256-tmjvn4LMVgJuJWtTWv92z3ies/WZnL/5GANsRYw0/K8=",
+        "lastModified": 1729091898,
+        "narHash": "sha256-TuJnqBV/GyLrMl5hc+NeLhdHxGcXngcEjrBoiiC9ris=",
         "ref": "refs/heads/main",
-        "rev": "719381ea7c123dbe57d6e808e362394d9774b002",
-        "revCount": 445,
+        "rev": "905386a76eb4ad8b540bb7541b6bfd003ea9590c",
+        "revCount": 448,
         "type": "git",
         "url": "file:./modules/neve"
       },

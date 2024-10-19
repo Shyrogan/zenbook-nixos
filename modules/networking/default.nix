@@ -27,6 +27,11 @@
           psk=ext:APS_PASSWORD
           '';
         };
+        Freebox-517A5B = {
+          auth = ''
+          psk=ext:AMBER_PASSWORD
+          '';
+        };
       };
     };
   };

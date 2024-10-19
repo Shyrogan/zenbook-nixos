@@ -29,6 +29,9 @@
 
     arduino-cli
     arduino-ide
+
+    cargo
+    rustc
   ];
 
   xdg.mimeApps = {
