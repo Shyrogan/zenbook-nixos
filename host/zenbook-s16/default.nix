@@ -32,8 +32,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    python3
-    python312Packages.pyserial
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?

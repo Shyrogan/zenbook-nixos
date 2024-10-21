@@ -13,6 +13,8 @@
     ../apps/intellij.nix
     ../apps/gitkraken.nix
     ../apps/minecraft.nix
+    
+    ../apps/dev/python3.nix
   ];
   
   home.packages = with pkgs; [
@@ -32,6 +34,9 @@
 
     cargo
     rustc
+    glibc
+
+    nodePackages_latest.wrangler
   ];
 
   xdg.mimeApps = {
