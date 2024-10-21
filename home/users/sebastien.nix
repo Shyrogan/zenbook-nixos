@@ -15,6 +15,7 @@
     ../apps/minecraft.nix
     
     ../apps/dev/python3.nix
+    ../apps/dev/javascript.nix
   ];
   
   home.packages = with pkgs; [
