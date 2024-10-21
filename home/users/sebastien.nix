@@ -38,6 +38,8 @@
     glibc
 
     nodePackages_latest.wrangler
+
+    devenv
   ];
 
   xdg.mimeApps = {
