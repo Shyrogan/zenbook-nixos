@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }: with lib; {
+{ config, inputs, lib, pkgs, ... }: with lib; {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -19,11 +19,11 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      users.sebastien = import ./home/users/sebastien.nix;
+      users.sebastien = import ../../home/users/sebastien.nix;
       extraSpecialArgs = { inherit inputs; };
       sharedModules = [
-        nixvim.homeManagerModules.nixvim
-        walker.homeManagerModules.default
+        inputs.nixvim.homeManagerModules.nixvim
+        inputs.walker.homeManagerModules.default
       ];
       backupFileExtension = "backup";
     };
