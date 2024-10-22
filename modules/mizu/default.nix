@@ -20,7 +20,7 @@
         ];
         shell = pkgs.nushell;
       };
-      users.users.root = mkIf config.mizu.root {
+      root = mkIf config.mizu.root {
         hashedPassword = "!";
       };
     };
