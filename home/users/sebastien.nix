@@ -29,17 +29,6 @@
     thunderbird
     haruna
     obs-studio
-
-    arduino-cli
-    arduino-ide
-
-    cargo
-    rustc
-    glibc
-
-    nodePackages_latest.wrangler
-
-    devenv
   ];
 
   xdg.mimeApps = {
