@@ -4,6 +4,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    kernelParams = [ "amdgpu.dcdebugmask=0x600" ];
     kernelPackages = pkgs.linuxPackages_6_10;
     kernelPatches = [
       # This patches causes some error when running...
