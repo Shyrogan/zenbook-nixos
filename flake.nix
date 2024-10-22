@@ -27,7 +27,6 @@
           ./modules/stylix
           ./modules/agenix
         ];
-        mizu.sebastien.enable = true;
       };
     };
   };

@@ -10,8 +10,11 @@
     ../../modules/audio
     ../../modules/virtualisation
     ../../modules/gaming
+    ../../modules/mizu
     ../../modules/desktop/hyprland/os.nix
   ];
+
+  mizu.sebastien.enable = true;
 
   users.users = {
     root.hashedPassword = "!";
