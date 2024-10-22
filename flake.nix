@@ -13,7 +13,7 @@
     walker.url = "github:abenz1267/walker";
     agenix.url = "github:ryantm/agenix";
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nixvim, walker, agenix, ... }@inputs: let
+  outputs = { self, nixpkgs, ... }@inputs: let
    inherit (self) outputs; 
   in {
     # Configuration for my Zenbook S16 that uses HX370 CPU
@@ -23,24 +23,11 @@
         specialArgs = { inherit inputs outputs; };
         modules = [
           ./host/zenbook-s16
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.sebastien = import ./home/users/sebastien.nix;
-              extraSpecialArgs = { inherit inputs; };
-              sharedModules = [
-                nixvim.homeManagerModules.nixvim
-                walker.homeManagerModules.default
-              ];
-              backupFileExtension = "backup";
-            };
-          }
-          
+          ./modules/mizu
           ./modules/stylix
           ./modules/agenix
         ];
+        mizu.sebastien.enable = true;
       };
     };
   };
