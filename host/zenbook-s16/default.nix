@@ -14,11 +14,8 @@
     ../../modules/desktop/hyprland/os.nix
   ];
 
+  users.users.root.hashedPassword = "!";
   mizu.sebastien.enable = true;
-
-  users.users = {
-    root.hashedPassword = "!";
-  };
 
   # Required for Hyprland apps to work properly.
   xdg.portal = {

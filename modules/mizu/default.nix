@@ -3,20 +3,28 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  options.mizu.sebastien = {
-    enable = mkEnableOption "Sebastien's user";
+  options.mizu = {
+    root = mkEnableOption "Root user";
+    sebastien = {
+      enable = mkEnableOption "Sebastien's user";
+    };
   };
 
-  config = mkIf config.mizu.sebastien.enable {
-    users.users.sebastien = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "audio" "docker" "dialout" ];
-      packages = with pkgs; [
-        nushell
-      ];
-      shell = pkgs.nushell;
+  config = {
+    users.users = {
+      sebastien = mkIf config.mizu.sebastien.enable {
+        isNormalUser = true;
+        extraGroups = [ "wheel" "audio" "docker" "dialout" ];
+        packages = with pkgs; [
+          nushell
+        ];
+        shell = pkgs.nushell;
+      };
+      users.users.root = mkIf config.mizu.root {
+        hashedPassword = "!";
+      };
     };
-    home-manager = {
+    home-manager = mkIf config.mizu.sebastien.enable {
       useGlobalPkgs = true;
       useUserPackages = true;
       users.sebastien = import ../../home/users/sebastien.nix;
