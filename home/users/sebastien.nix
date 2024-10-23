@@ -29,6 +29,8 @@
     thunderbird
     haruna
     obs-studio
+
+    devenv
   ];
 
   xdg.mimeApps = {
