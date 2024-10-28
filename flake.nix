@@ -13,14 +13,8 @@
     agenix.url = "github:ryantm/agenix";
 
     hyprland = {
-      type = "git";
-      url = "git+https://github.com/hyprwm/Hyprland";
-      submodules = true;
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
     };
   };
   outputs = { self, nixpkgs, ... }@inputs: let

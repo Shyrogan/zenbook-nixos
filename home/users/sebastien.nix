@@ -13,6 +13,8 @@
     ../apps/intellij.nix
     ../apps/gitkraken.nix
     ../apps/minecraft.nix
+
+    ../apps/wezterm.nix
     
     ../apps/dev/python3.nix
     ../apps/dev/javascript.nix
@@ -41,9 +43,10 @@
     colorschemes = {
       catppuccin.enable = lib.mkForce false;
       base16 = {
-        enable = true;
+        enable = lib.mkForce false;
         colorscheme = lib.mkForce "default-dark";
       };
+      cyberdream.enable = lib.mkForce true;
     };
   };
 

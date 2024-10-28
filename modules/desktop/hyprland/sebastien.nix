@@ -13,9 +13,6 @@
     xwayland.enable = true;
     systemd.enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    plugins = [
-      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-    ];
     settings = {
       "$mod" = "SUPER";
 

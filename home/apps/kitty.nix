@@ -6,6 +6,7 @@
       confirm_os_window_close = 0;
       shell = "${pkgs.nushell}/bin/nu";
       window_padding_width = 4;
+      background_opacity = lib.mkForce 0.8;
     };
 
     font = {
