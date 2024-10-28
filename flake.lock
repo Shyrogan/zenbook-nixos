@@ -367,7 +367,7 @@
     },
     "flake-utils_3": {
       "inputs": {
-        "systems": "systems_5"
+        "systems": "systems_6"
       },
       "locked": {
         "lastModified": 1726560853,
@@ -784,6 +784,27 @@
         "type": "github"
       }
     },
+    "hyprspace": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ],
+        "systems": "systems_5"
+      },
+      "locked": {
+        "lastModified": 1729915529,
+        "narHash": "sha256-wgOovzalxaxY3lKvOEc9s803uBA22LfCUt244VJ4icM=",
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "rev": "999af6e9f290458b6c4f93d6161988d472402c94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "type": "github"
+      }
+    },
     "hyprutils": {
       "inputs": {
         "nixpkgs": [
@@ -1132,6 +1153,7 @@
         "agenix": "agenix",
         "home-manager": "home-manager_3",
         "hyprland": "hyprland",
+        "hyprspace": "hyprspace",
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim_2",
         "stylix": "stylix",
@@ -1149,7 +1171,7 @@
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_5",
         "nixpkgs": "nixpkgs_6",
-        "systems": "systems_6",
+        "systems": "systems_7",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-tmux": "tinted-tmux"
@@ -1230,6 +1252,21 @@
     },
     "systems_5": {
       "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "systems_6": {
+      "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
         "owner": "nix-systems",
@@ -1243,7 +1280,7 @@
         "type": "github"
       }
     },
-    "systems_6": {
+    "systems_7": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

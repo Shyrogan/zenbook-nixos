@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix";
     Neve.url = "git+file:./modules/neve";
     nixvim = {
@@ -12,6 +11,17 @@
     };
     walker.url = "github:abenz1267/walker";
     agenix.url = "github:ryantm/agenix";
+
+    hyprland = {
+      type = "git";
+      url = "git+https://github.com/hyprwm/Hyprland";
+      submodules = true;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
   outputs = { self, nixpkgs, ... }@inputs: let
    inherit (self) outputs; 
