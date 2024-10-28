@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, lib, ... }: {
   imports = [
     ../../modules/desktop/hyprland/sebastien.nix
     ../apps/nushell.nix
@@ -19,7 +19,6 @@
   ];
   
   home.packages = with pkgs; [
-    inputs.Neve.packages.${pkgs.system}.default
     statix
 
     unzip
@@ -31,7 +30,22 @@
     obs-studio
 
     devenv
+
+    uxplay
+    staruml
   ];
+
+  programs.nixvim = {
+    enable = true;
+    imports = [ inputs.Neve.nixvimModule ];
+    colorschemes = {
+      catppuccin.enable = lib.mkForce false;
+      base16 = {
+        enable = true;
+        colorscheme = lib.mkForce "default-dark";
+      };
+    };
+  };
 
   xdg.mimeApps = {
     enable = true;
