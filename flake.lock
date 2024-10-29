@@ -7,17 +7,17 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1729850659,
-        "narHash": "sha256-HekeTn6C7aa7OhismURZivWxf3QnYdKcA2DCZbkOB24=",
-        "ref": "refs/heads/nixvimModule",
-        "rev": "1931bc420dac86f593154b5102a491310c279dd2",
-        "revCount": 450,
-        "type": "git",
-        "url": "file:./modules/neve"
+        "lastModified": 1729992673,
+        "narHash": "sha256-hQYpmnEqETIp1vJ80NH264o6PfUcS++uoBztqMFHejs=",
+        "owner": "redyf",
+        "repo": "Neve",
+        "rev": "175bc014ad60d773ecbaff5bc751106ff837faac",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:./modules/neve"
+        "owner": "redyf",
+        "repo": "Neve",
+        "type": "github"
       }
     },
     "agenix": {
