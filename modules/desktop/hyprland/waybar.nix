@@ -14,7 +14,7 @@
         modules-right = ["cpu" "memory" "temperature" "wireplumber" "battery"];
 
         "hyprland/workspaces" = {
-          format = "{icon}";
+          format = "{windows}";
           format-icons = {
             "1" = " ";
             "2" = "󰈹";

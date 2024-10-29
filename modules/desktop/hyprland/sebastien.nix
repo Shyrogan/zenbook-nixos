@@ -21,10 +21,10 @@
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+"
 
-      	", XF86MonBrightnessDown, exec, brightnessctl s 10%-" 
-      	", XF86MonBrightnessUp, exec, brightnessctl s 10%+" 
+        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-" 
+        ", XF86MonBrightnessUp, exec, brightnessctl s 10%+" 
 
-        "$mod, Return, exec, kitty"
+        "$mod, Return, exec, wezterm"
         "$mod, n, exec, firefox"
         "$mod, Space, exec, walker --modules applications"
 
@@ -92,6 +92,9 @@
 
       decoration = {
         rounding = 4;
+        blur = {
+          passes = 4;
+        };
       };
     };
     extraConfig = ''
@@ -109,6 +112,8 @@
     animation = workspaces, 1, 2, default
     animation = windows, 1, 2, default, slide
     animation = fade, 0
+    
+    layerrule = blur,waybar
     '';
   };
 

@@ -12,9 +12,12 @@
     walker.url = "github:abenz1267/walker";
     agenix.url = "github:ryantm/agenix";
 
-    hyprland = {
+  hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
     };
   };
   outputs = { self, nixpkgs, ... }@inputs: let

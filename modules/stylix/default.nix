@@ -1,10 +1,13 @@
-{ inputs, pkgs, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.stylix.nixosModules.stylix
   ];
   stylix = {
     enable = true;
-    image = ../../assets/wallpaper.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
+    image = ../../assets/wallpaper_dark.jpg;
+    base16Scheme = builtins.fetchurl {
+      url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";
+      sha256 = "1bfi479g7v5cz41d2s0lbjlqmfzaah68cj1065zzsqksx3n63znf";
+    };
   };
 }

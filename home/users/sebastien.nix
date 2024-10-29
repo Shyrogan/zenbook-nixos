@@ -46,7 +46,10 @@
         enable = lib.mkForce false;
         colorscheme = lib.mkForce "default-dark";
       };
-      cyberdream.enable = lib.mkForce true;
+      cyberdream = {
+        enable = lib.mkForce true;
+        settings.transparent = true;
+      };
     };
   };
 
