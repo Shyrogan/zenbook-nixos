@@ -12,8 +12,18 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     settings = {
+      env = [
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DEKSTOP,Hyprland"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "MOZ_ENABLE_WAYLAND,1"
+        "XDG_SESSION_TYPE,wayland"
+      ];
+
       "$mod" = "SUPER";
 
       bind = [
@@ -36,8 +46,8 @@
         "$mod, ampersand, workspace, 1" "$mod, eacute, workspace, 2" "$mod, quotedbl, workspace, 3"
         "$mod, apostrophe, workspace, 4"
         "$mod, parenleft, workspace, 5"
-        "$mod, egrave, workspace, 6"
-        "$mod, minus, workspace, 7"
+        "$mod, minus, workspace, 6"
+        "$mod, egrave, workspace, 7"
         "$mod, underscore, workspace, 8"
         "$mod, ccedilla, workspace, 9"
         "$mod, agrave, workspace, 10"
@@ -46,8 +56,8 @@
         "SHIFT $mod, quotedbl, movetoworkspace, 3"
         "SHIFT $mod, apostrophe, movetoworkspace, 4"
         "SHIFT $mod, parenleft, movetoworkspace, 5"
-        "SHIFT $mod, egrave, movetoworkspace, 6"
-        "SHIFT $mod, minus, movetoworkspace, 7"
+        "SHIFT $mod, minus, movetoworkspace, 6"
+        "SHIFT $mod, egrave, movetoworkspace, 7"
         "SHIFT $mod, underscore, movetoworkspace, 8"
         "SHIFT $mod, ccedilla, movetoworkspace, 9"
         "SHIFT $mod, agrave, movetoworkspace, 10"
@@ -115,6 +125,7 @@
     animation = fade, 0
     
     layerrule = blur,waybar
+    layerrule = ignorezero,waybar
     '';
   };
 

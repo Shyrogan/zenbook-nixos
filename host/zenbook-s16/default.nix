@@ -19,11 +19,7 @@
     sebastien.enable = true;
   };
 
-  # Required for Hyprland apps to work properly.
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  services.upower.enable = true;
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }

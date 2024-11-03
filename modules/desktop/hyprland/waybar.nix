@@ -14,18 +14,7 @@
         modules-right = ["cpu" "memory" "temperature" "wireplumber" "battery"];
 
         "hyprland/workspaces" = {
-          format = "{windows}";
-          format-icons = {
-            "1" = " ";
-            "2" = "󰈹";
-            "3" = " ";
-            "8" = " ";
-            "9" = " ";
-            "10" = " ";
-            urgent = " ";
-            focused = " ";
-            default = " ";
-          };
+          format = "{name}";
         };
 
         "hyprland/window" = {
@@ -116,7 +105,7 @@
 
       /* All 3 modules should have paddings */
       .modules-left, .modules-right, .modules-center {
-        background: ${colors.base00};
+        background: alpha(${colors.base00}, 0.75);
         padding: 0 10px;
       }
 
@@ -146,6 +135,8 @@
 
       #workspaces button {
         padding: 4px;
+        margin-top: 2px;
+        border-bottom: 2px solid alpha(${colors.base00}, 0.75);
       }
 
       #workspaces button.active {
