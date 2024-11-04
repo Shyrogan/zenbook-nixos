@@ -34,7 +34,7 @@
     devenv
 
     uxplay
-    staruml
+    onlyoffice-bin
   ];
 
   programs.nixvim = {
